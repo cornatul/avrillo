@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  avrillo:
+    build: .
+    image: cornatul/avrillo
+    container_name: avrillo
+    restart: always
+    env_file:
+      .env.example
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
